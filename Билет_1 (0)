@@ -21,3 +21,49 @@
 
 
 /ВОПРОС 3/
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static List<Integer> alternate(List<Integer> first, List<Integer> second) {
+        int sizea = first.size();
+        int sizeb = second.size();
+        List<Integer> newList = new ArrayList<>();
+        int size = Math.min(sizea, sizeb);
+        
+        for (int i = 0; i < size; i++) {
+            newList.add(first.get(i));
+            newList.add(second.get(i));
+        }
+        
+        if (size < sizea) {
+            for (int i = size; i < sizea; i++) {
+                newList.add(first.get(i));
+            }
+        } else if (size < sizeb) {
+            for (int i = size; i < sizeb; i++) {
+                newList.add(second.get(i));
+            }
+        }
+        return newList;
+    }
+    
+    public static void main(String[] args) {
+        List<Integer> firstTest = new ArrayList<>();
+        List<Integer> secondTest = new ArrayList<>();
+        firstTest.add(1);
+        firstTest.add(2);
+        firstTest.add(3);
+        firstTest.add(4);
+        firstTest.add(5);
+        secondTest.add(6);
+        secondTest.add(7);
+        secondTest.add(8);
+        secondTest.add(9);
+        secondTest.add(10);
+        secondTest.add(11);
+        secondTest.add(12);
+        System.out.println(alternate(firstTest, secondTest));
+    }
+}
+
