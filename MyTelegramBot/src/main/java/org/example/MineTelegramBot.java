@@ -101,7 +101,7 @@ public class MineTelegramBot extends TelegramLongPollingBot {
 
 
 
-                // ----creating keyboard with 2 row and 6 button----
+                // ----creating keyboard with 1 row and 3 button----
             else if (message_text.equals("/markup")) {
                 SendMessage response = new SendMessage();
                 response.setChatId(chat_id);
